@@ -139,7 +139,7 @@ export default class Contacto extends React.Component {
                                 <Button variant="primary" type="submit">
                                     Enviar
                                 </Button>
-                                <button className="btn btn-outline-primary" type="submit" id="sendMessageButton"> Enviar</button>
+                               
                         
 
                                
