@@ -1,24 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Navegacion from './componentes/navegacion/Navegacion';
+import Perfil from './componentes/perfil/Perfil';
+import Pagina from './Pagina';
+//import ScriptTag from 'react-script-tag';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+  
+ <Pagina>
+  
+ </Pagina>
+
+    </>
   );
 }
 
