@@ -50,7 +50,7 @@ export default class Perfil extends React.Component {
             /></h1>
           
             <div className="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                <a href="https://www.canva.com/design/DAFVbWGcM7U/Hosj85HaTtdBHuxkjUE1rw/view?utm_content=DAFVbWGcM7U&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" className="btn btn-white  btn-dark mr-4">Descargar CV</a>
+                <a target="_blank" href="https://drive.google.com/file/d/1fkeZUwVTPP0yMNV1Cc4UCO7EBDgsIOyL/view?usp=share_link" className="btn btn-white  btn-dark mr-4">Descargar CV</a>
             </div>
         </div>
         <div className="col-lg-6 px-8 pl-lg-0 pb-5 pb-lg-4 about-img">
