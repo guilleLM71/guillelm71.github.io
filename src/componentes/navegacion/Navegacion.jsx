@@ -32,7 +32,7 @@ export default class Navegacion extends React.Component {
             <div className="navbar-nav m-auto py-0">
                  <Link
                  
-                className="nav-item nav-link "
+                className="menu nav-item nav-link "
                 activeClass="active"
                 to="Inicio"
                 spy={true}
@@ -44,7 +44,7 @@ export default class Navegacion extends React.Component {
                 </Link>
 
                 <Link
-                className="nav-item nav-link"
+                className="nav-item nav-link  menu  "
                 activeClass="active"
                 to="Acerca"
                 spy={true}
@@ -57,7 +57,7 @@ export default class Navegacion extends React.Component {
 
                 
                 <Link
-                className="nav-item nav-link"
+                className="nav-item nav-link menu  "
                 activeClass="active"
                 to="Skills"
                 spy={true}
@@ -69,7 +69,7 @@ export default class Navegacion extends React.Component {
                 </Link>
                                
                 <Link
-                className="nav-item nav-link"
+                className="nav-item nav-link menu  "
                 activeClass="active"
                 to="Cualidades"
                 spy={true}
@@ -80,7 +80,7 @@ export default class Navegacion extends React.Component {
                Cualidades
                 </Link>
                 <Link
-                className="nav-item nav-link"
+                className="nav-item nav-link menu  "
                 activeClass="active"
                 to="Portafolio"
                 spy={true}
@@ -92,7 +92,7 @@ export default class Navegacion extends React.Component {
                 </Link>
 
                 <Link
-                className="nav-item nav-link"
+                className="nav-item nav-link menu  "
                 activeClass="active"
                 to="Contacto"
                 spy={true}
