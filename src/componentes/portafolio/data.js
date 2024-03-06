@@ -92,6 +92,27 @@ const data = [
 		link:"",
 		github:"https://github.com/guilleLM71/tiendavirtualv1"
 	},
+	{
+		id: 7,
+		image:
+			[
+				"https://i.postimg.cc/8czjWsMT/Captura-de-pantalla-2024-03-05-184247.png",
+				"https://i.postimg.cc/QtXtGV6c/Captura-de-pantalla-2024-03-05-184332.png",
+				"https://i.postimg.cc/023bMkQq/Captura-de-pantalla-2024-03-05-184348.png",
+				"https://i.postimg.cc/vT2DvMtf/Captura-de-pantalla-2024-03-05-184443.png",
+				"https://i.postimg.cc/P5wN1gpv/Captura-de-pantalla-2024-03-05-184458.png",
+				"https://i.postimg.cc/SKLsvcGy/Captura-de-pantalla-2024-03-05-194603.png",
+				"https://i.postimg.cc/y6LJKXCx/Captura-de-pantalla-2024-03-05-194625.png",
+				"https://i.postimg.cc/hPhXtzKr/Captura-de-pantalla-2024-03-05-194701.png",
+				"https://i.postimg.cc/R0xhdgKs/Captura-de-pantalla-2024-03-05-201231.png",
+			],
+		title: 'Sistema de control de documentos',
+		category: 'Angular',
+		description: 'Sistema de control de documentos con QR, con autenticaion y autorizacion Keycloak, Servicio con Spring Boot, Frontend con Angular',
+		date: 'Publlicado en 5 marzo 2023',
+		link:"",
+		github:"https://github.com/guilleLM71/instructivosFront"
+	},
 ];
 
 export default data;
