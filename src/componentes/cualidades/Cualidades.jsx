@@ -32,7 +32,7 @@ export default class Cualidades extends React.Component {
                             <i className="far fa-dot-circle text-primary position-absolute educacion" 
                             ></i>
                             <h5 className="font-weight-bold mb-1">Licenciado en Informatica Mencion en Ciencias de la Computacion</h5>
-                            <p className="mb-2"><strong>UMSA</strong> | <small>2017-2022</small></p>
+                            <p className="mb-2"><strong>UMSA</strong> | <small>2017-2023</small></p>
                             
                         </div>
                       
@@ -58,10 +58,25 @@ export default class Cualidades extends React.Component {
                         </div>
                         <div className="position-relative ex-me mb-4">
                             <i className="far fa-dot-circle text-primary position-absolute exp" 
+                           
+                            ></i>
+                            <h5 className="font-weight-bold mb-1">Blockchain</h5>
+                            <p className="mb-2"><strong>Con experiencia en proyectos propios</strong> </p>
+                            <p className="mb-2"><strong>Investigaciones de Grado Universitario</strong> </p>
+                        </div>
+                        <div className="position-relative ex-me mb-4">
+                            <i className="far fa-dot-circle text-primary position-absolute exp" 
                       
                             ></i>
-                            <h5 className="font-weight-bold mb-1">Desarrollador Web</h5>
+                            <h5 className="font-weight-bold mb-1">Desarrollador Web - Back/Front</h5>
                             <p className="mb-2"><strong>Con experiencia en proyectos propios</strong> </p>
+                        </div>
+
+                        <div className="position-relative ex-me mb-4">
+                            <i className="far fa-dot-circle text-primary position-absolute exp" 
+                            ></i>
+                            <h5 className="font-weight-bold mb-1">Pasante - MEFP - DGSGIF</h5>
+                            <p className="mb-2"><strong>Con experiencia en proyectos de la entidad en el area de QA</strong> </p>
                         </div>
                     </div>
                 </div>

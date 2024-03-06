@@ -119,7 +119,7 @@ export default class Skills extends React.Component {
                              <i className="far fa-dot-circle text-primary position-absolute exp" 
                             
                             ></i>
-                            <h6 className="font-weight-bold">Solidity</h6>   
+                            <h6 className="font-weight-bold">Solidity, TypeScript, Spring Boot, Minio, Keycloak, Docker</h6>   
                         </div>
                        
                     </div>
@@ -128,7 +128,7 @@ export default class Skills extends React.Component {
                         <i className="far fa-dot-circle text-primary position-absolute exp" 
                             
                             ></i>
-                            <h6 className="font-weight-bold">React</h6>
+                            <h6 className="font-weight-bold">React, Angular, Ionic</h6>
     
                         </div>
                     </div>
@@ -147,7 +147,7 @@ export default class Skills extends React.Component {
                         <i className="far fa-dot-circle text-primary position-absolute exp" 
                             
                             ></i>
-                            <h6 className="font-weight-bold">NoSQL (MongoDB)</h6>
+                            <h6 className="font-weight-bold">NoSQL (MongoDB, Firebase)</h6>
     
                         </div>             
                     </div>
