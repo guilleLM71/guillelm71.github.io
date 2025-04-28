@@ -77,6 +77,12 @@ export default class Cualidades extends React.Component {
                             ></i>
                             <h5 className="font-weight-bold mb-1">Pasante - MEFP - DGSGIF</h5>
                             <p className="mb-2"><strong>Con experiencia en proyectos de la entidad en el area de QA</strong> </p>
+                        </div>                       
+                        <div className="position-relative ex-me mb-4">
+                            <i className="far fa-dot-circle text-primary position-absolute exp" 
+                            ></i>
+                            <h5 className="font-weight-bold mb-1">Consultor - MEFP - DGSGIF</h5>
+                            <p className="mb-2"><strong>Con experiencia en proyectos interno de la entidad en el area de QA</strong> </p>
                         </div>
                     </div>
                 </div>

@@ -31,14 +31,14 @@ export default class Acerca extends React.Component {
                 </div>
                 <div class="col-lg-7">
                     <h3 class="mb-4">Diseñador UI/UX Y Desarrollador Web - Backend|Frontend</h3>
-                    <p>Soy licenciado en informatico de la UMSA con muchos conocimientos en varias ramas tecnologicas, capaz
+                    <p>Soy licenciado en informatica de la UMSA con muchos conocimientos en varias ramas tecnologicas, capaz
                         de solucionar problemas de manera eficiente.
                                             </p>
                     <div class="row mb-3">
                         <div class="col-sm-6 py-2"><h6>Nombre: <span class="text-secondary">Juan Guillermo Laura Mamani</span></h6></div>
                         <div class="col-sm-6 py-2"><h6>Fecha Nac: <span class="text-secondary">7 de Enero 1998</span></h6></div>
                         <div class="col-sm-6 py-2"><h6>Grado: <span class="text-secondary">Licenciado en Informatica</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Experiencia: <span class="text-secondary">4 años</span></h6></div>
+                        <div class="col-sm-6 py-2"><h6>Experiencia: <span class="text-secondary">2 años en QA, 3 años gral. </span></h6></div>
                         <div class="col-sm-6 py-2"><h6>Celular: <span class="text-secondary">78889375</span></h6></div>
                         <div class="col-sm-6 py-2"><h6>Email: <span class="text-secondary">jguillermolaura@gmail.com</span></h6></div>                    </div>
                 </div>
