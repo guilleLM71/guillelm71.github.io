@@ -113,6 +113,35 @@ const data = [
 		link:"",
 		github:"https://github.com/guilleLM71/instructivosFront"
 	},
+	{
+		id: 8,
+		image:
+			[
+				"https://i.postimg.cc/HVZ3yfxB/Captura-de-pantalla-2026-08-08-184238.png",
+				"https://i.postimg.cc/9r817vMN/Captura-de-pantalla-2026-08-08-184246.png",
+				"https://i.postimg.cc/KRqQMdzD/Captura-de-pantalla-2026-08-08-184252.png",
+				"https://i.postimg.cc/hfyMdHj8/Captura-de-pantalla-2026-08-08-184259.png" 
+			],
+		title: 'Analizador semantico SQL',
+		category: 'Python',
+		description: 'Analizador semantico SQL implementado con Modelos de IA integrado con dashboard dinamico con Superset',
+		date: 'Publlicado en 5 agosto 2026',
+		link:"",
+		github:"https://github.com/guilleLM71/analizadorsemantico"
+	},
+	{
+		id:9,
+		image:[
+			"https://i.postimg.cc/5071t0b9/Captura-de-pantalla-2026-08-08-202214.png"
+		],
+		title:'Landing Page Freelance',
+		category:'Javascript',
+		description: 'Landing Page Freelance propio implementado con framework REACTJS',
+		date: 'Publlicado en 5 agosto 2026',
+		link:"",
+		github:""
+	}
+
 ];
 
 export default data;

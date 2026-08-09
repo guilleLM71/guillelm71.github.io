@@ -629,7 +629,7 @@ h3{
   opacity: 1;
 }
 
-.modal-dialog {
+.modalportafolio .modal-dialog {
   position: relative;
   max-width: 700px;
   max-height: 150vh;
@@ -639,8 +639,19 @@ h3{
   cursor: default;
 }
 
-.modal-dialog > * {
+.modalportafolio .modal-dialog > * {
   padding: 1rem;
+}
+
+/* Modal backdrop y reseteo de wrapper Bootstrap */
+.modal-dialog {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.65) !important;
+  backdrop-filter: blur(5px);
 }
 
 .modal-header,
@@ -929,4 +940,481 @@ h3{
     	font-size: 10pt;
 	}
 
+
 }
+
+/* ==========================================
+   MODO CLARO Y MODO OSCURO (THEME SWITCH)
+   ========================================== */
+
+/* Transición suave para todos los elementos */
+body, 
+nav.navbar, 
+.skill, 
+.article-container, 
+.form-control, 
+.modal-content,
+.btn-category,
+.btn-theme-toggle {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilos para el botón de cambio de tema */
+.btn-theme-toggle {
+  background: rgba(11, 206, 175, 0.08);
+  border: 2px solid #0BCEAF;
+  border-radius: 30px;
+  padding: 6px 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.btn-theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(11, 206, 175, 0.25);
+  background: rgba(11, 206, 175, 0.15);
+}
+
+.theme-toggle-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-icon {
+  font-size: 16px;
+  transition: transform 0.4s ease;
+}
+
+.btn-theme-toggle:hover .theme-icon {
+  transform: rotate(20deg) scale(1.15);
+}
+
+.sun-icon {
+  color: #f59e0b;
+}
+
+.moon-icon {
+  color: #6366f1;
+}
+
+.theme-text {
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* ------------------------------------------
+   ESTILOS PARA MODO OSCURO (body.dark-theme)
+   ------------------------------------------ */
+
+body.dark-theme {
+  background-color: #0f172a !important;
+  color: #cbd5e1 !important;
+}
+
+/* Encabezados y Párrafos en Modo Oscuro */
+body.dark-theme h1:not(.portafolio-stroke-header),
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5,
+body.dark-theme h6,
+body.dark-theme p,
+body.dark-theme label,
+body.dark-theme strong {
+  color: #f8fafc !important;
+}
+
+body.dark-theme .text-secondary {
+  color: #94a3b8 !important;
+}
+
+body.dark-theme .text-black,
+body.dark-theme .text-dark {
+  color: #e2e8f0 !important;
+}
+
+/* Barra de Navegación */
+body.dark-theme nav.navbar,
+body.dark-theme .navbar.bg-light {
+  background-color: #1e293b !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+  border-bottom: 1px solid #334155;
+}
+
+body.dark-theme .navbar-light .navbar-nav .nav-link {
+  color: #cbd5e1 !important;
+}
+
+body.dark-theme .navbar-light .navbar-nav .nav-link:hover,
+body.dark-theme .navbar-light .navbar-nav .nav-link.active {
+  color: #0BCEAF !important;
+}
+
+body.dark-theme .menu::after,
+body.dark-theme .menu::before {
+  border-color: #0BCEAF !important;
+}
+
+body.dark-theme .navbar-toggler {
+  border-color: #334155 !important;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Botón de tema en modo oscuro */
+body.dark-theme .btn-theme-toggle {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #0BCEAF;
+}
+
+body.dark-theme .theme-text {
+  color: #f8fafc;
+}
+
+/* Sección Perfil / Hero */
+body.dark-theme #home.bg-primary {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%) !important;
+  border-bottom: 1px solid #1e293b;
+}
+
+/* Trazos de texto y títulos de fondo en Modo Oscuro */
+body.dark-theme h1.portafolio-stroke-header,
+body.dark-theme .portafolio-stroke-header {
+  color: transparent !important;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.45) !important;
+  opacity: 0.5 !important;
+  filter: blur(0.2px);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+body.dark-theme .name-stroke-header {
+  color: transparent !important;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.2) !important;
+  opacity: 0.75 !important;
+}
+
+body.dark-theme .typed-stroke-header {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Sección Skills */
+body.dark-theme .skill {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  border: 1px solid #334155;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .skill h6 {
+  color: #f8fafc !important;
+}
+
+body.dark-theme .skill::before {
+  background: #0BCEAF !important;
+}
+
+body.dark-theme .skill:hover h6 {
+  color: #0f172a !important;
+}
+
+body.dark-theme .skills {
+  --c: #0BCEAF;
+  background: 
+    linear-gradient(var(--c) 50%, #f8fafc 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+    linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+}
+
+body.dark-theme .skills h6 {
+  color: #e2e8f0 !important;
+}
+
+/* Sección Cualidades */
+body.dark-theme #qualification small {
+  color: #94a3b8 !important;
+}
+
+/* Sección Portafolio */
+body.dark-theme .btn-category {
+  background-color: #1e293b !important;
+  color: #0BCEAF !important;
+  border: 1px solid #334155 !important;
+}
+
+body.dark-theme .btn-category:hover {
+  background-color: rgba(11, 206, 175, 0.25) !important;
+  color: #ffffff !important;
+}
+
+body.dark-theme .article-container {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-theme .article-container h2 {
+  color: #f8fafc !important;
+}
+
+body.dark-theme .article-container p {
+  color: #cbd5e1 !important;
+}
+
+body.dark-theme .article-footer span {
+  color: #94a3b8 !important;
+}
+
+/* Formulario de Contacto */
+body.dark-theme .form-control {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  border: 1px solid #334155 !important;
+}
+
+body.dark-theme .form-control::placeholder {
+  color: #94a3b8 !important;
+}
+
+body.dark-theme .form-control:focus {
+  background-color: #1e293b !important;
+  color: #ffffff !important;
+  border-color: #0BCEAF !important;
+  box-shadow: 0 0 0 0.2rem rgba(11, 206, 175, 0.25) !important;
+}
+
+/* Modales en Modo Oscuro */
+body.dark-theme .modal-content {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  border: 1px solid #334155 !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-theme .modal-header,
+body.dark-theme .modal-footer {
+  background-color: #0f172a !important;
+  border-color: #334155 !important;
+}
+
+body.dark-theme .modal-title {
+  color: #f8fafc !important;
+}
+
+/* Modal de CV */
+body.dark-theme .container.bg-white {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+body.dark-theme .text-gray-800,
+body.dark-theme .text-gray-700 {
+  color: #e2e8f0 !important;
+}
+
+body.dark-theme .text-gray-600,
+body.dark-theme .text-gray-500 {
+  color: #cbd5e1 !important;
+}
+
+/* Botones de Desplazamiento (Scroll to top / bottom) */
+body.dark-theme .scroll-to-bottom {
+  color: #0BCEAF !important;
+}
+
+body.dark-theme .back-to-top {
+  border-color: #0BCEAF !important;
+  color: #0BCEAF !important;
+  background-color: #1e293b !important;
+}
+
+body.dark-theme .back-to-top:hover {
+  background-color: #0BCEAF !important;
+  color: #0f172a !important;
+}
+
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  width: 55px;
+  height: 55px;
+  bottom: 30px;
+  left: 30px;
+  background-color: #25d366;
+  color: #ffffff !important;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0px 4px 15px rgba(37, 211, 102, 0.4);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+  animation: whatsapp-pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+  background-color: #128c7e;
+  color: #ffffff !important;
+  transform: scale(1.12);
+  box-shadow: 0px 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* ==========================================
+   ESTILOS PARA MODAL DE PROYECTOS DEL PORTAFOLIO
+   ========================================== */
+
+.portfolio-project-modal .modal-dialog {
+  max-width: 1140px !important;
+  width: 92% !important;
+  margin: 1.75rem auto !important;
+}
+
+.portfolio-project-modal .modal-content {
+  border-radius: 16px !important;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35) !important;
+}
+
+.portfolio-carousel-wrapper {
+  background-color: #0b0f19;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 420px;
+}
+
+.carousel-img-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.modal-project-img {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 380px !important;
+  max-height: 75vh !important;
+  object-fit: contain !important;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.carousel-img-container a:hover .modal-project-img {
+  transform: scale(1.02);
+}
+
+.btn-hd-zoom {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff !important;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.25s ease;
+  z-index: 10;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-hd-zoom:hover {
+  background: #0BCEAF;
+  color: #0f172a !important;
+  border-color: #0BCEAF;
+  transform: scale(1.08);
+}
+
+.carousel-control-btn {
+  background: rgba(0, 0, 0, 0.65);
+  color: #ffffff;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-control-btn:hover {
+  background: #0BCEAF;
+  color: #0f172a;
+  transform: scale(1.1);
+}
+
+.btn-github-modal {
+  border-color: #343a40;
+  color: #343a40;
+}
+
+.btn-github-modal:hover {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+/* Modal en Modo Oscuro */
+body.dark-theme .portfolio-project-modal .modal-content {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  border: 1px solid #334155 !important;
+}
+
+body.dark-theme .portfolio-carousel-wrapper {
+  background-color: #090d16;
+}
+
+body.dark-theme .btn-github-modal {
+  border-color: #475569;
+  color: #f8fafc;
+}
+
+body.dark-theme .btn-github-modal:hover {
+  background-color: #475569;
+  color: #ffffff;
+}
+
+

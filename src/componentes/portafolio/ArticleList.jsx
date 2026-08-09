@@ -1,32 +1,26 @@
 import React, { Component } from "react";
-//import swal from "sweetalert";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-//import {Typed} from "../../lib/typed/typed.js";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import "../../scss/bootstrap/scss/bootstrap.scss";
 import Carousel from "react-bootstrap/Carousel";
-import ReactTypingEffect from "react-typing-effect";
-import ModalBasico from "./ModalBasico";
+import { Image, Badge } from "react-bootstrap";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { AiOutlineLink, AiFillGithub } from "react-icons/ai";
-import { ImCross } from "react-icons/im";
-import { Image } from "react-bootstrap";
+import { FaSearchPlus } from "react-icons/fa";
+import "../../scss/bootstrap/scss/bootstrap.scss";
 
-//import "./Fakenews.css";
 export default class ArticleList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       abiertomodal: false,
-      open: false,
       titulo: "",
       cuerpo: "",
       imagenes: [],
       index: 0,
       link: "",
       github: "",
+      categoria: "",
+      fecha: "",
     };
   }
 
@@ -39,137 +33,167 @@ export default class ArticleList extends React.Component {
   };
 
   openmodalarticule = (id) => {
-    console.log(id);
-    this.setState({ abiertomodal: !this.state.abiertomodal });
-    this.props.articles.map((article) => {
-      if (article.id === id) {
-        console.log(article);
-        this.setState({ titulo: article.title });
-        this.setState({ cuerpo: article.description });
-        this.setState({ imagenes: article.image });
-        this.setState({ link: article.link });
-        this.setState({ github: article.github });
-        console.log(this.state.imagenes);
-        /*
-            return(
-            < ModalBasico                     
-                titulo={article.title} 
-                cuerpo={article.date} 
-                open={true}
- 
-                />
-            )*/
-      }
-    });
-
-    //console.log(this.props.articles.get(id))
+    const article = this.props.articles.find((art) => art.id === id);
+    if (article) {
+      this.setState({
+        abiertomodal: true,
+        titulo: article.title,
+        cuerpo: article.description,
+        imagenes: article.image || [],
+        link: article.link || "",
+        github: article.github || "",
+        categoria: article.category || "",
+        fecha: article.date || "",
+        index: 0,
+      });
+    }
   };
 
   render() {
-    const modalStyles = {
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-      width: 400,
-      bgcolor: "background.paper",
-      border: "2px solid #000",
-      boxShadow: 24,
-      p: 4,
-    };
-
-    const style = {
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-      width: 400,
-      bgcolor: "background.paper",
-      border: "2px solid #000",
-      boxShadow: 24,
-      p: 4,
-    };
-
     return (
       <>
         <div className="article-list">
           {this.props.articles.map((article) => (
-            <>
-              <div className="article-container" key={article.id}>
-                <div className="img-container">
-                  <img
-                    src={article.image[0]}
-                    alt={article.title}
-                    onClick={() => this.openmodalarticule(article.id)}
-                  />
-                </div>
-                <div className="article-body">
-                  <h2>{article.title}</h2>
-                  <p>{article.description}</p>
-                  <div className="article-footer">
-                    <span>{article.date} · </span>
-                  </div>
+            <div className="article-container" key={article.id}>
+              <div className="img-container">
+                <img
+                  src={article.image[0]}
+                  alt={article.title}
+                  onClick={() => this.openmodalarticule(article.id)}
+                />
+              </div>
+              <div className="article-body">
+                <h2 onClick={() => this.openmodalarticule(article.id)} style={{ cursor: 'pointer' }}>
+                  {article.title}
+                </h2>
+                <p>{article.description}</p>
+                <div className="article-footer">
+                  <span>{article.date}</span>
                 </div>
               </div>
-            </>
+            </div>
           ))}
         </div>
+
         <Modal
           show={this.state.abiertomodal}
           onHide={this.abrirmodal}
-          backdrop="static"
-          keyboard={false}
+          centered
+          size="xl"
+          className="portfolio-project-modal"
         >
-          <Modal.Header>
-            <Modal.Title>{this.state.titulo}</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Carousel
-              variant="dark"
-              nextIcon={
-                <IoIosArrowForward color="black" size={50}></IoIosArrowForward>
-              }
-              nextLabel={""}
-              prevLabel={""}
-              prevIcon={
-                <IoIosArrowBack color="black" size={50}></IoIosArrowBack>
-              }
-              activeIndex={this.state.index}
-              onSelect={this.handleSelect}
-            >
-              {this.state.imagenes.map((imagen) => {
-                return (
-                  <Carousel.Item>
-                    <Image className="d-block w-100 " src={imagen} />
-                  </Carousel.Item>
-                );
-              })}
-            </Carousel>
-          </Modal.Body>
-          <Modal.Footer>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-              }}
-            >
-              <Button variant="primary" onClick={this.abrirmodal}>
-                Cerrar
-              </Button>
-              <div>
-                <a href={this.state.link}>
-                  <AiOutlineLink size={30}></AiOutlineLink>
-                </a>
-
-                <a href={this.state.github}>
-                  <AiFillGithub size={30}></AiFillGithub>
-                </a>
-              </div>
+          <Modal.Header closeButton className="px-4 py-3 align-items-center">
+            <div>
+              <Modal.Title className="h5 font-weight-bold mb-1">
+                {this.state.titulo}
+              </Modal.Title>
+              {this.state.categoria && (
+                <Badge bg="primary" className="px-3 py-1 font-weight-normal text-white bg-primary">
+                  {this.state.categoria}
+                </Badge>
+              )}
             </div>
+          </Modal.Header>
+          <Modal.Body className="p-4">
+            {this.state.imagenes && this.state.imagenes.length > 0 && (
+              <div className="portfolio-carousel-wrapper mb-4">
+                <Carousel
+                  variant="dark"
+                  nextIcon={
+                    <div className="carousel-control-btn next">
+                      <IoIosArrowForward size={24} />
+                    </div>
+                  }
+                  prevIcon={
+                    <div className="carousel-control-btn prev">
+                      <IoIosArrowBack size={24} />
+                    </div>
+                  }
+                  nextLabel=""
+                  prevLabel=""
+                  activeIndex={this.state.index}
+                  onSelect={this.handleSelect}
+                  interval={null}
+                >
+                  {this.state.imagenes.map((imagen, idx) => (
+                    <Carousel.Item key={idx}>
+                      <div className="carousel-img-container position-relative">
+                        <a
+                          href={imagen}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="Hacer clic para abrir imagen completa en HD"
+                          className="d-block w-100 text-center"
+                        >
+                          <Image
+                            className="d-block modal-project-img"
+                            src={imagen}
+                            alt={`${this.state.titulo} - ${idx + 1}`}
+                          />
+                        </a>
+                        <a
+                          href={imagen}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-hd-zoom"
+                          title="Abrir imagen en HD"
+                        >
+                          <FaSearchPlus size={14} className="mr-1" /> Ver HD
+                        </a>
+                      </div>
+                    </Carousel.Item>
+                  ))}
+                </Carousel>
+              </div>
+            )}
+
+            <div className="project-detail-content">
+              <h6 className="font-weight-bold text-uppercase text-muted mb-2 style-subtitle" style={{ fontSize: '0.85rem', letterSpacing: '0.5px' }}>
+                Descripción del Proyecto
+              </h6>
+              <p className="project-description-text mb-3" style={{ fontSize: '1rem', lineHeight: '1.6' }}>
+                {this.state.cuerpo}
+              </p>
+              {this.state.fecha && (
+                <p className="text-muted small mb-0">
+                  <i className="far fa-calendar-alt mr-2"></i>{this.state.fecha}
+                </p>
+              )}
+            </div>
+          </Modal.Body>
+
+          <Modal.Footer className="px-4 py-3 d-flex justify-content-between align-items-center flex-wrap">
+            <div className="d-flex align-items-center gap-2 my-1 flex-wrap">
+              {this.state.link && this.state.link.trim() !== "" && (
+                <a
+                  href={this.state.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary btn-sm px-3 mr-2 d-inline-flex align-items-center"
+                >
+                  <AiOutlineLink size={18} className="mr-1" />
+                  Ver Demo / Sitio
+                </a>
+              )}
+              {this.state.github && this.state.github.trim() !== "" && (
+                <a
+                  href={this.state.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-dark btn-sm px-3 mr-2 d-inline-flex align-items-center btn-github-modal"
+                >
+                  <AiFillGithub size={18} className="mr-1" />
+                  Ver Código (GitHub)
+                </a>
+              )}
+            </div>
+            <Button variant="secondary" onClick={this.abrirmodal} className="btn-sm px-4">
+              Cerrar
+            </Button>
           </Modal.Footer>
         </Modal>
       </>
     );
   }
 }
+
